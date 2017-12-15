@@ -9,6 +9,10 @@ var twilio = require('twilio');
 var client = new twilio(accountSid, authToken);
 var numbers = ['2173051574','0000001','00000002'] ;
 
+var threshold1 = 5;
+var threshold2 = 10;
+var threshold3 = 15;
+
 setInterval(function(){
   // Functions for checking prices of cryptocurrencies
   // Runs every 10 seconds
@@ -20,18 +24,35 @@ setInterval(function(){
 
 
 function checkBitcoin(){
-  // API CALL
+  // COIN MARKET CAP API CALL 
+  // Var change
+  if(thresholdExceed(change1,change2,change3)){
+  	// Send Text
+  }
 }
 
 function checkEthereum(){
-  // API CALL
+  // COIN MARKET CAP API CALL 
+  // Var change
+  if(thresholdExceed(change1,change2,change3)){
+  	// Send Text
+  }
 }
 
 function checkLitecoin(){
-  // API CALL 
-
+  // COIN MARKET CAP API CALL 
+  // Var change
+  if(thresholdExceed(change1,change2,change3)){
+  	// Send Text
+  }
 }
 
+function thresholdExceed(change1,change2,change3){
+	if(change1>threshold1 || change2>threshold2 || change3 > threshold3){
+		return true;
+	}
+	return false;
+}
 function percentageText(numbers,coin,value,change,time){
   // Twilio API 
   for (i = 0; i < numbers.length; i++) {
