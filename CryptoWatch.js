@@ -8,11 +8,13 @@ var twilioNumber = '';
 var twilio = require('twilio');
 var client = new twilio(accountSid, authToken);
 var numbers = ['2173051574','0000001','00000002'] ;
+
 var changeArray;
 var threshold1 = 5;
 var threshold2 = 10;
 var threshold3 = 15;
 var coinCap = require('./coinMarketCap');
+
 setInterval(function(){
   // Functions for checking prices of cryptocurrencies
   // Runs every 10 seconds
@@ -25,27 +27,33 @@ setInterval(function(){
 
 function checkBitcoin(){
   // COIN MARKET CAP API CALL 
+
   changeArray = coinCap.bitcoin; // should return an array with change1,change2,change3
   // Var change
   if(thresholdExceed(changeArray[0],changeArray[1],changeArray[2])){
+
   	// Send Text
   }
 }
 
 function checkEthereum(){
+
   // COIN MARKET CAP API CALL
   changeArray = coinCap.ethereum
   // Var change
   if(thresholdExceed(changeArray[0],changeArray[1],changeArray[2])){
+
   	// Send Text
   }
 }
 
 function checkLitecoin(){
   // COIN MARKET CAP API CALL 
+
   changeArray = coinCap.litecoin
   // Var change
   if(thresholdExceed(changeArray[0],changeArray[1],changeArray[2])){
+
   	// Send Text
   }
 }
