@@ -7,16 +7,16 @@ var authToken = '';
 var twilioNumber = '';
 var twilio = require('twilio');
 var client = new twilio(accountSid, authToken);
-var numbers = ['000000','0000001','00000002'] ;
+var numbers = ['2173051574','0000001','00000002'] ;
 
 setInterval(function(){
   // Functions for checking prices of cryptocurrencies
-  // Runs every 5 seconds
+  // Runs every 10 seconds
   checkBitcoin();
   checkEthereum();
   checkLitecoin();
 
-}, 5000);
+}, 10000);
 
 
 function checkBitcoin(){
