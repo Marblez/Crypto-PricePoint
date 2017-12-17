@@ -12,11 +12,22 @@ var twilioNumber = '+12176567597';
 //var coinCap = require('./coinMarketCap');
 
 setInterval(function(){
-  runtest();
+  thresholdText('Bitcoin','$20000');
 
+}, 5000);
 
-}, 1000);
-
+function thresholdText(coin,value){
+  for(let i = 0; i<numbers.length; i++){
+    var str1 = "has reached the price of "
+    var message = coin.concat(str1,value);
+    client.messages.create({
+        body: message,
+        to: numbers[i],  // Text this number
+        from: twilioNumber // From a valid Twilio number
+    })
+    .then((message) => console.log(message.sid));
+  }
+}
 
 function runtest(){
   for(let i = 0; i<numbers.length; i++){
@@ -27,8 +38,6 @@ function runtest(){
     })
     .then((message) => console.log(message.sid));
   }
-
-
 }
 // Potential additional features:
 // (1) Google Trends API for analytics
