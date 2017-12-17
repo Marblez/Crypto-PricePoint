@@ -2,6 +2,11 @@
 // Required Configurations: NodeJS, Google Trends API, Twilio
 // BlockTrail API
 // Past Datasets: https://www.coindesk.com/price/
+// SET THRESHOLDS
+var eth = 800;
+var btc = 20000;
+var ltc = 400;
+
 var accountSid = 'ACf6e2c57a49f3a5266e44e4e292c94b5a';
 var authToken = '069cf667c68c5e3624ba7f6a1ee68564';
 var twilio = require('twilio');
