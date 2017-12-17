@@ -17,6 +17,24 @@ setInterval(function(){
 
 }, 5000);
 
+function checkPercentage(percentage){
+  if(percentage>10){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+function checkThreshold(threshold,price){
+  if(threshold<price){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 function thresholdText(coin,value){
   for(let i = 0; i<numbers.length; i++){
     var str1 = " has reached the price of "
