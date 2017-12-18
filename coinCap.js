@@ -4,14 +4,17 @@
 
 var https = require('https');
 
-var url = 'https://api.gdax.com/products/ETH-USD/';
+//var url = 'https://api.gdax.com/products/ETH-USD/ticker';
 //var url = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
 var request = require("request");
 var jsonObject;
-request(url, function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-
+var link = {
+  url: 'https://api.gdax.com/products/ETH-USD/ticker',
+  headers: {
+    'User-Agent': 'request'
   }
+};
+request(link, function (error, response, body) {
   	 jsonObject = JSON.parse(body);
      console.log(jsonObject);
 });
